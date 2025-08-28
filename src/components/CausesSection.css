@@ -1,0 +1,235 @@
+/* src/components/CausesSection.css */
+
+/* === Variables for easy theming === */
+:root {
+  --primary-dark: #004d40;
+  --primary-color: #00796b;
+  --primary-light: #26a69a;
+  --background-light: #f0fdfa;
+  --white: #ffffff;
+  --text-dark: #333;
+  --text-light: #555;
+  --border-color: #e0e0e0;
+  --shadow-light: 0 4px 15px rgba(0, 0, 0, 0.07);
+  --shadow-heavy: 0 8px 24px rgba(0, 0, 0, 0.15);
+  --border-radius-md: 12px;
+  --border-radius-sm: 8px;
+}
+
+/* === Main Section Layout === */
+.causes-section {
+  background: var(--background-light);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  color: var(--primary-dark);
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.causes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === Cause Card Styling === */
+.cause-card {
+  background: var(--white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-light);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.cause-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-heavy);
+}
+
+.modal-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: var(--border-radius-sm);
+  margin-bottom: 15px;
+}
+
+.cause-title {
+  font-size: 1.3rem;
+  color: #004d40;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.donation-info {
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.progress-bar {
+  background: #e0e7ff;
+  border-radius: 10px;
+  height: 10px;
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: var(--primary-light);
+  height: 100%;
+  transition: width 0.5s ease-in-out;
+  border-radius: 10px;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+   cursor: pointer;
+}
+
+/* === Action Bar === */
+.cause-actions {
+display: flex
+;
+    gap: 10px;
+}
+
+.donate-btn {
+  background-color: var(--primary-light);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.donate-btn:hover {
+  background-color: var(--primary-color);
+}
+
+.donate-btn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.share-btn {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-light);
+  padding: 8px 10px;
+  border-radius: var(--border-radius-sm);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 8px;
+}
+
+.share-btn:hover {
+  background-color: var(--background-light);
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+
+/* === Modal Styling === */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal-content {
+  background: var(--white);
+  border-radius: var(--border-radius-md);
+  max-width: 600px;
+  width: 100%;
+  margin: 20px;
+  position: relative;
+  overflow-y: auto;
+  max-height: 90vh;
+  box-shadow: var(--shadow-heavy);
+  animation: slideUp 0.4s ease-out;
+}
+@keyframes slideUp { from { transform: translateY(30px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.modal-title { font-size: 1.8rem; color: var(--primary-color); margin-bottom: 20px; text-align: center; font-weight: 700; }
+
+.modal-details p { margin: 10px 0; font-size: 1rem; color: var(--text-light); line-height: 1.7; }
+.modal-details p strong { color: var(--text-dark); }
+.close-btn { position: absolute; top: 15px; right: 15px; background: transparent; border: none; font-size: 2rem; color: #95a5a6; cursor: pointer; transition: color 0.3s ease; }
+.close-btn:hover { color: #e74c3c; }
+
+
+/* =========== Responsive Adjustments =========== */
+@media (max-width: 768px) {
+  .causes-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .causes-section {
+    padding: 15px 15px;
+  }
+
+  .section-title {
+    margin-bottom: 20px;
+  }
+
+  .cause-card {
+    padding: 15px;
+  }
+
+  .cause-title {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .donate-btn {
+    padding: 10px 15px;
+  }
+}
+
+/* For Chrome, Safari, Edge */
+.swal2-input::-webkit-outer-spin-button,
+.swal2-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+.swal2-input[type=number] {
+  -moz-appearance: textfield;
+}

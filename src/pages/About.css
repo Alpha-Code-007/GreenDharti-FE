@@ -1,0 +1,230 @@
+/* src/pages/About.css - UPDATED & ISOLATED STYLES */
+
+/* --- FONT IMPORT --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:ital,wght@0,400;1,500&display=swap');
+
+/* --- CSS VARIABLES FOR EASY THEMEING --- */
+/* We are keeping this block but will override the primary color directly in the styles below */
+:root {
+  --primary-color: #f45612; 
+  --secondary-color: #ffc107;
+  --light-bg: #f4f7f6;
+  --dark-text: #2c3e50;
+  --light-text: #ffffff;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-body: 'Lora', serif;
+}
+
+.about-page-v2 {
+  font-family: var(--font-body);
+  color: var(--dark-text);
+  background-color: var(--light-bg);
+}
+
+/* --- HERO SECTION - UPDATED STYLES --- */
+.about-hero-v2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--light-text);
+  /* background-color: #ec6906; */
+background-color:  #004d40; /* <-- CHANGED to direct green color */
+  padding: 60px 20px;
+}
+
+.hero-overlay {
+  width: 100%;
+}
+
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto;
+  color: white;
+}
+
+/* --- GENERAL CONTENT & TWO-COLUMN LAYOUT --- */
+.content-section {
+  padding: 20px 20px;
+}
+
+.content-section:nth-of-type(odd) {
+  background-color: var(--light-text);
+}
+
+.content-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.two-column {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.two-column.reverse {
+  flex-direction: row-reverse;
+}
+
+.column-text {
+  flex: 1;
+}
+
+.column-text h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: #004d40; /* <-- CHANGED to direct green color */
+  margin-bottom: 20px;
+}
+
+.column-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.column-image {
+  flex: 1;
+}
+
+.column-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* --- APPROACH CARDS SECTION --- */
+.approach-section {
+  padding: 40px 20px;
+  background-color: var(--light-bg);
+  text-align: center;
+}
+
+.approach-section h2 {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: #004d40; /* <-- CHANGED to direct green color */
+  margin-bottom: 50px;
+}
+
+.approach-cards-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.approach-card {
+  background: var(--light-text);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.approach-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+  color: #2E8B57; /* <-- CHANGED to direct green color */
+  margin-bottom: 15px;
+}
+
+.approach-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.approach-card p {
+  line-height: 1.7;
+}
+
+/* --- QUOTE SECTION --- */
+.quote-section {
+  padding: 80px 20px;
+  background-color: #004d40; /* <-- CHANGED to direct green color */
+  color: var(--light-text);
+  text-align: center;
+}
+
+.quote-section blockquote {
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 2rem;
+  font-weight: 500;
+  max-width: 800px;
+  margin: 0 auto 20px auto;
+  line-height: 1.5;
+  position: relative;
+  padding: 0 40px;
+}
+
+.quote-section blockquote::before,
+.quote-section blockquote::after {
+  content: '"';
+  font-family: 'Georgia', serif;
+  font-size: 5rem;
+  position: absolute;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.quote-section blockquote::before {
+  top: -20px;
+  left: 0;
+}
+
+.quote-section blockquote::after {
+  bottom: -40px;
+  right: 0;
+}
+
+.quote-section cite {
+  font-weight: 700;
+  font-family: var(--font-heading);
+  font-style: normal;
+  opacity: 0.9;
+}
+
+/* --- CTA BUTTON --- */
+.cta-button {
+  background-color: var(--secondary-color);
+  color: var(--dark-text);
+  font-family: var(--font-heading);
+  padding: 15px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background-color: #ffca28;
+  transform: scale(1.05);
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+  .two-column {
+    flex-direction: column !important;
+  }
+  .hero-title {
+    font-size: 2.5rem;
+  }
+}

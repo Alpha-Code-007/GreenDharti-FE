@@ -1,0 +1,263 @@
+/* ===============================
+   ManageEvents.css - Optimized UI
+   =============================== */
+
+.manage-events-container {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: auto;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f8;
+}
+
+.manage-events-container h1 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+/* -------- Event List -------- */
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* -------- Event Card -------- */
+.event-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* -------- Header -------- */
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.event-header h3 {
+  font-size: 1.4rem;
+  color: #34495e;
+  margin: 0;
+  flex: 1;
+  word-break: break-word;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #888;
+  margin-left: 12px;
+  white-space: nowrap;
+}
+
+/* -------- Content -------- */
+.event-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.event-content p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #555;
+}
+
+/* -------- Image -------- */
+.event-image {
+  width: 100%;
+  max-height: 250px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  margin-top: 12px;
+}
+
+/* -------- Actions -------- */
+.event-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.event-actions button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.edit-btn {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.edit-btn:hover {
+  background-color: #2980b9;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+/* -------- Status Badge -------- */
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 12px;
+  text-transform: uppercase;
+  margin-left: 8px;
+}
+
+.badge.upcoming {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.badge.completed {
+  background-color: #e2e3e5;
+  color: #383d41;
+}
+
+.badge.cancelled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* -------- No Events -------- */
+.no-events {
+  text-align: center;
+  color: #999;
+  font-size: 1rem;
+  margin-top: 40px;
+}
+
+/* -------- Responsive -------- */
+@media (max-width: 768px) {
+  .event-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .event-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .event-content p {
+    font-size: 0.95rem;
+  }
+
+  .event-actions {
+    justify-content: center;
+  }
+
+  .event-actions button {
+    width: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .manage-events-container h1 {
+    font-size: 1.7rem;
+  }
+
+  .event-card {
+    padding: 16px;
+  }
+
+  .event-header h3 {
+    font-size: 1.1rem;
+  }
+
+  .event-content p {
+    font-size: 0.9rem;
+  }
+
+  .event-image {
+    max-height: 200px;
+  }
+
+  .event-actions button {
+    width: 100%;
+  }
+}
+.cause-actions {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  gap: 10px; /* Space between Edit and Delete buttons */
+  align-items: flex-end; /* Align buttons to the right within their container */
+  /* margin-left: auto; Removed this as flex-direction column doesn't need it the same way */
+  flex-shrink: 0; /* Prevent buttons from shrinking if space is tight */
+}
+
+/* ⭐ NEW: Specific style for Edit button */
+.edit-button {
+  background: #2196F3; /* Blue color for Edit */
+  color: white;
+  border: none;
+  padding: 8px 16px; /* Good padding */
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: 500;
+  width: 100px; /* Fixed width for consistency */
+  text-align: center;
+}
+
+.edit-button:hover {
+  background: #1976D2; /* Darker blue on hover */
+}
+
+/* ⭐ MODIFIED: Style for Delete button */
+.delete-button {
+  background: #c62828; /* Red color for Delete */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: 500;
+  width: 100px; /* Fixed width for consistency */
+  text-align: center;
+}
+.delete-button:hover {
+  background: #b71c1c;
+}
+
+/* Remove number input spinner - Chrome, Safari, Edge */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Remove number input spinner - Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

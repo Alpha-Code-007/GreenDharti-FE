@@ -1,0 +1,289 @@
+/* src/components/Footer.css */
+
+/* --- FONT & VARIABLES (for consistency) --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Lora:wght@700&display=swap');
+
+:root {
+  --primary-color: #00897b;
+  --dark-bg: #222831;
+  --light-text: #eeeeee;
+  --heading-text: #ffffff;
+  --font-heading: 'Montserrat', sans-serif;
+  --font-logo: 'Lora', serif;
+}
+
+/* --- MAIN FOOTER CONTAINER --- */
+.main-footer-v2 {
+  background-color: var(--dark-bg);
+  color: var(--light-text);
+  padding: 40px 20px 0 20px;
+  font-family: var(--font-heading);
+}
+
+.footer-container-v2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- FOOTER COLUMNS & HEADINGS --- */
+.footer-col {
+  padding: 0 15px;
+}
+
+.footer-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--heading-text);
+  margin-bottom: 15px;
+  position: relative;
+}
+
+
+/* --- BRAND & SOCIALS COLUMN --- */
+.footer-logo-img {
+  width: 130px;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.footer-img-container
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-tagline {
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+  color: var(--heading-text);
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--heading-text);
+  border-radius: 50%;
+  margin-right: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s, transform 0.3s;
+  font-size: 0.8rem;
+}
+
+.footer-social a:hover {
+  background-color: var(--primary-color);
+  transform: translateY(-2px);
+}
+
+/* --- QUICK LINKS & CONTACT COLUMNS --- */
+.links-col ul,
+.contact-col ul {
+  list-style: none;
+  padding: 0;
+}
+.links-col ul,
+.footer-quick-link{
+  padding-left: 100px;
+}
+
+.links-col li,
+.contact-col li {
+  margin-bottom: 10px;
+}
+
+.links-col a,
+.contact-col a {
+  color: var(--light-text);
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 0.9rem;
+}
+
+.links-col a:hover,
+.contact-col a:hover {
+  color: var(--primary-color);
+}
+
+.contact-col li {
+  display: flex;
+  align-items: flex-start;
+}
+
+.contact-icon {
+  margin-right: 10px;
+  font-size: 1rem;
+  color: var(--primary-color);
+  margin-top: 3px;
+}
+
+/* --- BOTTOM BAR --- */
+.footer-bottom {
+  margin-top: 30px;
+  padding: 15px 0;
+  text-align: center;
+  font-size: 0.8rem;
+  color : white;
+}
+
+/* Popup Overlay */
+.terms-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+/* Popup Box */
+.terms-modal {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Close Button */
+.close-btn {
+  background: #4dc2c2;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin-top: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+/* --- Popup Overlay --- */
+.terms-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  overflow: auto; /* 👈 allows overlay scrolling on small screens */
+}
+
+/* --- Popup Box --- */
+.terms-popup {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 80vh;      /* 👈 restrict height to viewport */
+  overflow-y: auto;      /* 👈 enables vertical scroll */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+  text-align: left;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Optional: Scrollbar styling */
+.terms-popup::-webkit-scrollbar {
+  width: 6px;
+}
+.terms-popup::-webkit-scrollbar-thumb {
+  background-color: #4dc2c2;
+  border-radius: 3px;
+}
+.terms-popup::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+/* --- Close Button --- */
+.close-btn {
+  background: #4dc2c2;
+  border: none;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* --- Terms Link Button --- */
+.terms-btn {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: none;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+.terms-btn:hover {
+  color: #3182ce;
+}
+
+/* --- Animation --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* --- RESPONSIVE ADJUSTMENTS --- */
+@media (max-width: 768px) {
+  .main-footer-v2 {
+    padding-top: 30px;
+  }
+  .footer-container-v2 {
+    text-align: center;
+  }
+  .footer-heading::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .contact-col li {
+    justify-content: center;
+  }
+  .footer-logo-img {
+      margin-left: auto;
+      margin-right: auto;
+  }
+    .terms-popup {
+    padding: 15px 20px;
+    max-width: 95%;
+      margin: 10px;
+  }
+  .links-col ul,
+.footer-quick-link{
+  padding-left: 0px;
+}
+}
+
+@media (max-width: 480px) {
+  .terms-popup {
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    
+  }
+}
+
+/* --- ✅ THIS IS THE ADDED CODE TO FIX THE COLOR --- */
+.footer-bottom p {
+  color: #b0b0b0; /* Light grey for better visibility */
+}
