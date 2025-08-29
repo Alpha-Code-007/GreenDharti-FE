@@ -280,7 +280,7 @@ const Causes = () => {
                     ? cause.description.slice(0, 200) + "..."
                     : cause.description
                 }</p>
-              </div>
+              </div>  
 
               <div className="btn-container">
                 <button

@@ -1,4 +1,6 @@
-/* src/components/Header.css */
+/* =====================
+   GLOBAL HEADER STYLES
+===================== */
 .main-header {
   background-color: #ffffff; 
   padding: 20px 0; 
@@ -7,106 +9,82 @@
   left: 0;
   width: 100%;
   z-index: 1000; 
-  /* box-shadow: 0 2px 8px rgba(0,0,0,0.1);  */
+  transition: all 0.3s ease;
 }
 
 .container {
-  max-width: 1180px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
-  gap: 30px; 
+  justify-content: center;
+  gap: 30px;
   flex-wrap: nowrap;
   position: relative;
 }
 
-/* ✅ MODIFIED: Style for a text logo */
-.logo a {
-  font-size: 2.5rem; /* ⭐ Increased from 2rem to 2.5rem. Change as you like. */
-  font-weight: 900; 
-  color: #333; 
-  text-decoration: none;
-}
-
-/* ... (rest of the CSS is the same) ... */
-.header-contact {
-  margin-left: auto; 
-}
-.phone-number {
-  color: #333; 
-  font-weight: 600; 
-  text-decoration: none;
-  font-size: 1.05rem; 
-  transition: color 0.3s;
-}
-
-.phone-number:hover {
-  color: #004d40; 
-}
-
-.nav-links {
+/* Logo Section */
+.logo-container {
   display: flex;
-  gap: 30px; 
   align-items: center;
-  margin-left: auto; 
+  text-decoration: none;
 }
 
-.nav-links a, p {
-  color: #333; 
+.logo-text {
+  color: #333;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-left: 12px;
+}
+
+/* Nav Links */
+.nav-links {
+   display: flex;
+  align-items: center;
+  gap: 20px; 
+}
+
+.nav-links a {
+  color: #333;
   text-decoration: none;
-  font-weight: 500; 
+  font-weight: 500;
   transition: color 0.3s;
-  display: block; 
-  padding: 5px 0; 
+  display: block;
+  padding: 5px 0;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: #004d40; 
-  text-decoration: underline; 
+  color: #004d40;
+  text-decoration: underline;
   text-underline-offset: 4px;
 }
 
-.mega-menu {
-  position: relative;
+/* Phone Number */
+.header-contact {
+  margin-left: auto;
 }
 
-.mega-menu-content {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background-color: #ffffff; 
-  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-  min-width: 200px;
-  z-index: 999;
-  border-radius: 4px; 
-}
-
-.mega-menu:hover .mega-menu-content {
-  display: block;
-}
-
-.mega-menu-content a {
-  display: block;
-  padding: 10px 15px;
-  color: #333; 
+.phone-number {
+  color: #333;
+  font-weight: 600;
   text-decoration: none;
-  white-space: nowrap;
+  font-size: 1.05rem;
+  transition: color 0.3s;
 }
 
-.mega-menu-content a:hover {
-  background-color: #f5f5f5; 
-  color: #004d40; 
+.phone-number:hover {
+  color: #004d40;
 }
 
+/* Hamburger Menu */
 .hamburger {
-  display: none; 
+  display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 28px; 
-  height: 20px; 
+  width: 28px;
+  height: 20px;
   cursor: pointer;
   margin-left: auto;
 }
@@ -114,99 +92,118 @@
 .hamburger .bar {
   height: 3px;
   width: 100%;
-  background-color: #333; 
+  background-color: #333;
   border-radius: 2px;
   transition: 0.3s ease;
 }
 
 .hamburger .bar.open:nth-child(1) {
-  transform: translateY(8.5px) rotate(45deg); 
+  transform: translateY(8.5px) rotate(45deg);
 }
 .hamburger .bar.open:nth-child(2) {
   opacity: 0;
 }
 .hamburger .bar.open:nth-child(3) {
-  transform: translateY(-8.5px) rotate(-45deg); 
+  transform: translateY(-8.5px) rotate(-45deg);
 }
 
+/* =====================
+   RESPONSIVE BREAKPOINTS
+===================== */
+
+/* 💻 Large Screens (Desktop >1200px) */
+@media (min-width: 1200px) {
+  .container {
+    padding: 0 40px;
+  }
+  .logo-text {
+    font-size: 2rem;
+  }
+  .nav-links a {
+    font-size: 1.05rem;
+  }
+}
+
+/* 🖥️ Medium Screens (Laptops/Tablets landscape: 992px - 1199px) */
+@media (max-width: 1199px) {
+  .container {
+    padding: 0 30px;
+  }
+  .logo-text {
+    font-size: 1.6rem;
+  }
+  .nav-links {
+    gap: 20px;
+  }
+  .nav-links a {
+    font-size: 0.95rem;
+  }
+}
+
+/* 📱 Tablet Portrait + Small Laptops (768px - 991px) */
+@media (max-width: 991px) {
+  .nav-links {
+    gap: 15px;
+  }
+  .phone-number {
+    font-size: 0.95rem;
+  }
+  .logo-text {
+    font-size: 1.5rem;
+  }
+}
+
+/* 📲 Mobile & Tablet (<=768px) */
 @media (max-width: 768px) {
   .main-header {
-    padding: 15px 0; 
+    padding: 15px 0;
   }
+
   .container {
-    flex-direction: row; 
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    gap: 0; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0;
   }
 
   .nav-links {
     display: none;
     flex-direction: column;
-    width: 100%; 
-    background-color: #ffffff; 
+    width: 100%;
+    background-color: #ffffff;
     margin-top: 10px;
     padding: 15px 10px;
     border-radius: 4px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1); 
-    margin-left: 0; 
-    gap: 10px; 
-    align-items: flex-start; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-left: 0;
+    gap: 10px;
+    align-items: center;
   }
 
   .nav-links.open {
     display: flex;
-    align-items: center;
-  }
-
-  .nav-links a,
-  .mega-menu-content a {
-    padding: 8px 0;
-    color: #333; 
-  }
-
-  .mega-menu-content {
-    position: static;
-    box-shadow: none;
-    background-color: transparent;
-  }
-
-  .mega-menu-content a:hover {
-    background-color: #f5f5f5; 
-    color: #004d40; 
-  }
-
-  .header-contact {
-    margin-top: 10px;
-    margin-left: 0; 
   }
 
   .hamburger {
     display: flex;
   }
+
+  .header-contact {
+    margin-top: 10px;
+    margin-left: 0;
+  }
 }
 
+/* 📱 Extra Small Mobiles (<=480px) */
 @media (max-width: 480px) {
-  .logo a {
-    font-size: 2rem; /* ⭐ Increased from 1.6rem to 2rem for mobile */
+  .logo-text {
+    font-size: 1.3rem;
+    margin-left: 8px;
   }
   .phone-number {
+    font-size: 0.85rem;
+  }
+  .nav-links a {
     font-size: 0.9rem;
   }
-}
-
-/* ***********13-08-2025***************** */
-/* Yeh CSS apni Header.css file mein add karein */
-
-.logo-container {
-  display: flex;
-  align-items: center; /* Yeh logo aur text ko vertically center mein rakhega */
-  text-decoration: none; /* Link se underline hatane ke liye */
-}
-
-.logo-text {
-  color: #333; /* Text ka color */
-  font-size: 1.8rem; /* Text ka size (aap ise badal sakte hain) */
-  font-weight: 700;
-  margin-left: 12px; /* Logo aur text ke beech mein space */
 }
