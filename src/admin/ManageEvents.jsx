@@ -44,8 +44,6 @@ const ManageEvents = () => {
     const newErrors = {};
 
     if (!title.trim()) newErrors.title = "Title is required";
-    if (!shortDescription.trim())
-      newErrors.shortDescription = "Short Description is required";
     if (!description.trim()) newErrors.description = "Description is required";
     if (!eventDate) newErrors.eventDate = "Event Date is required";
     if (!location.trim()) newErrors.location = "Location is required";
@@ -219,7 +217,7 @@ const ManageEvents = () => {
         </label>
 
         <label>
-          Short Description: <span style={{ color: "red" }}>*</span>
+          Short Description:
           <input
             type="text"
             name="shortDescription"
@@ -227,7 +225,7 @@ const ManageEvents = () => {
             value={formData.shortDescription}
             onChange={handleChange}
           />
-          {errors.shortDescription && <p style={{ color: "red" }}>{errors.shortDescription}</p>}
+
         </label>
 
         <label>

@@ -16,7 +16,7 @@ import BlogDetails from '../pages/BlogDetails';
 import VolunteerForm from '../pages/VolunteerForm';
 import SubmitCause from '../pages/SubmitCause';
 import WhatsApp from '../components/WhatsApp';
-import CauseDetails from '../components/CausesDetails'; // Sahi component import karein
+import CauseDetails from '../components/CausesDetails'; 
 import EventDetailPage from '../components/EventDetailPage';
 import Login from '../admin/Login';
 import Dashboard from '../admin/Dashboard';
@@ -39,11 +39,10 @@ const AppRoutes = () => {
   };
 
   useEffect(() => {
-    // ✅ YAHAN BADLAAV KIYA GAYA HAI
-    // Yeh check karega ki code browser mein chal raha hai ya nahi
+    
     if (typeof window !== 'undefined') {
       if (!isAdminRoute) {
-        document.body.style.paddingTop = "60px"; // Ab yeh sirf browser mein chalega
+        document.body.style.paddingTop = "60px"; 
       } else {
         document.body.style.paddingTop = "0";
       }

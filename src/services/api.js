@@ -27,7 +27,7 @@ export const PublicApi = {
   getDonation: () => PublicApiInstance.get(`donations`),
   getCauses: () => PublicApiInstance.get(`causes`),
 
-  // 👇 **सिर्फ इस लाइन को ठीक किया गया है**
+
   getCauseById: (id) => PublicApiInstance.get(`causes/${id}`),
 
   getAllDonations: () => PublicApiInstance.get(`donations`),
@@ -77,7 +77,7 @@ export const AdminApi = {
   //   createCauses: (data) => AdminApiInstance.post(`causes/with-video`, data, { headers: AdminApi._authHeader() }),
 
   // updateCauses: (id, data) => AdminApiInstance.put(`causes/${id}/with-image`, data, { headers: AdminApi._authHeader() }),
-  // PURANE WALE KO IN NAYE FUNCTIONS SE BADAL DEIN
+ 
 
 
   createCauseWithMedia: (data) => AdminApiInstance.post(`causes/with-media`, data, {

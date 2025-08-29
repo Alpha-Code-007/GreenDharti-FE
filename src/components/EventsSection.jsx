@@ -90,42 +90,38 @@ const EventsSection = () => {
       <h2 className="section-title">Upcoming Events</h2>
       <div className="events-container">
         {events.filter(event => event.status === "UPCOMING").sort((a, b) => new Date(a.date || a.eventDate) - new Date(b.date || b.eventDate)).slice(0, 3)
-          .map((event, idx) => {
+          .map((event, index) => {
             const dateObj = new Date(event.date || event.eventDate);
             const day = dateObj.getDate();
             const month = dateObj.toLocaleString("default", { month: "short" });
             const year = dateObj.getFullYear();
+            const dayOfWeek = dateObj.toLocaleString("default", { weekday: "long" });
             const time = dateObj.toLocaleTimeString([], {
               hour: "2-digit",
               minute: "2-digit",
-              hour12: true, // Set to false if you want 24-hour format
-            })
+              hour12: true,
+            });
+
             return (
               <div
                 className="event-card"
-                key={event._id || idx}
+                key={event._id || event.id || index}
 
               >
-                <div className="event-date">
-                  <span className="day">{day}</span>
-                  <span className="month">{month}</span>
+                <div className="event-date-col">
+                  <span className="month-day">{month} {day}</span>
                   <span className="year">{year}</span>
                 </div>
-                <div className="event-info">
-                  <h3 >{event.title}</h3>
-                  <p className="time">{time}</p>
-                  <p className={`status ${event.status?.toLowerCase()}`}>
-                    {event.status}
-                  </p>
 
-                  <p className="description" onClick={() => handleCardClick(event)}>
-                    {event.description?.length > 200
-                      ? event.description.slice(0, 200) + "..."
-                      : event.description}
-
-                  </p>
-                  <p className="location">{event.location}</p>
-                  <p className="maxParticipants">Participants :{event.maxParticipants}</p>
+                <div className="event-details-col">
+                  <p className="event-datetime">{dayOfWeek} {time}</p>
+                  <h3 className="event-title" >{event.title}</h3>
+                  <p className="description" onClick={() => handleCardClick(event)} // 🔥 Open modal on click
+                    style={{ cursor: "pointer" }}>{
+                      event.description?.length > 200
+                        ? event.description.slice(0, 200) + "..."
+                        : event.description
+                    }</p>
                   {event.imageUrl && (
                     <img
                       src={getImageUrl(event.imageUrl)}
@@ -137,16 +133,13 @@ const EventsSection = () => {
                       }}
                     />
                   )}
-                  <div className="share-container">
-                    <button
-                      // ✨ 3. onClick को सरल बनाया गया
-                      onClick={() => handleShare(event)}
-                      className="share-button"
-                      title="Share this event"
-                    >
-                      Share <FaShareAlt />
-                    </button>
-                  </div>
+
+                  <button
+                    className="share-button"
+                    onClick={() => handleShare(event)}
+                  >
+                    Share <FaShareAlt />
+                  </button>
                 </div>
               </div>
             );
