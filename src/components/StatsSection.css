@@ -2,23 +2,21 @@
 .stats-section {
   background: #004d40;
   color: white;
-  padding: 60px 0; /* Changed to 0 horizontal padding for scroller */
+  padding: 60px 0; 
   text-align: center;
 }
 
-/* --- DESKTOP VIEW (Grid Layout) --- */
-/* This is the default style for screens wider than 768px */
 .stats-scroller {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 30px;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 20px; /* Add padding here for desktop */
+  padding: 0 20px; 
 }
 
 .stats-track {
-  display: contents; /* Allows grid to control the cards directly */
+  display: contents; 
 }
 
 .stat-card {
@@ -45,49 +43,43 @@
   color: #c8e6c9;
 }
 
-
-/* --- MOBILE VIEW (Auto-Scrolling Marquee) --- */
-/* This activates on screens 768px or smaller */
 @media (max-width: 768px) {
   .stats-scroller {
-    display: block; /* Disable the grid */
+    display: block; 
     max-width: 100%;
     overflow: hidden;
-    padding: 0; /* Remove padding for edge-to-edge scroll */
+    padding: 0; 
     -webkit-mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
     mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
   }
 
   .stats-track {
-    display: flex; /* Use flexbox for horizontal layout */
-    width: max-content; /* Make the track as wide as its content */
+    display: flex; 
+    width: max-content; 
     gap: 20px;
-    /* The animation magic happens here */
     animation: scroll 30s linear infinite;
   }
 
   .stats-track:hover {
-    animation-play-state: paused; /* Pause animation on hover */
+    animation-play-state: paused; 
   }
 
   .stat-card {
-    flex-shrink: 0; /* Prevent cards from shrinking */
-    width: 200px; /* Give cards a fixed width */
+    flex-shrink: 0; 
+    width: 200px; 
   }
 
   .stat-card:hover {
-    transform: none; /* Disable hover effect on mobile */
+    transform: none; 
     background: #00695c;
   }
 }
 
-/* The animation definition */
 @keyframes scroll {
   from {
     transform: translateX(0);
   }
   to {
-    /* Move the track to the left by half its width */
     transform: translateX(-50%);
   }
 }

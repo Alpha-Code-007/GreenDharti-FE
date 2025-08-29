@@ -98,17 +98,6 @@ const Causes = () => {
       loadRazorpayScript();
       return;
     }
-    // const { value: accepted } = await Swal.fire({
-    //   title: 'Terms & Conditions',
-    //   html: termsAndConditionsText,
-    //   input: 'checkbox',
-    //   inputValue: 0,
-    //   inputPlaceholder: 'I have read and agree to the terms and conditions',
-    //   confirmButtonText: 'Agree & Continue →',
-    //   showCancelButton: true,
-    //   inputValidator: (result) => !result && 'You must agree to the terms and conditions to proceed.'
-    // });
-    // if (accepted) {
     const { value: formValues } = await Swal.fire({
       title: 'Enter Your Details',
       html: `<input id="swal-input-name" class="swal2-input" placeholder="Full Name" required><input id="swal-input-email" class="swal2-input" type="email" placeholder="Email Address" required><input id="swal-input-phone" class="swal2-input" type="tel" placeholder="Phone Number (10 digits)" required><input id="swal-input-message" class="swal2-input" type="text" placeholder="Message">`,
@@ -133,11 +122,9 @@ const Causes = () => {
     } else {
       Swal.fire("Donation Cancelled", "You can try again anytime!", "info");
     }
-    // }
   };
 
   const startPayment = async (amountInPaisa, donorName, donorEmail, donorPhone, message, causeId) => {
-    // This function logic remains unchanged
     setIsPaymentProcessing(true);
     Swal.fire({ title: "Initiating Payment...", html: "Please wait...", allowOutsideClick: false, didOpen: () => Swal.showLoading() });
     try {
@@ -162,7 +149,7 @@ const Causes = () => {
         key: razorpayKey,
         amount: amountFromBackend,
         currency: currencyFromBackend,
-        name: "Alphaseam Foundation",
+        name: "Green Dharti",
         description: "Donation Payment",
         order_id: orderId,
         handler: async (response) => {
@@ -196,7 +183,6 @@ const Causes = () => {
   };
 
   const handleDonate = async (cause) => {
-    // This function logic remains unchanged
     const causeId = cause.id || cause._id;
     const { value: amount } = await Swal.fire({ title: `Donate to ${cause.title}`, input: "number", inputLabel: "Amount (INR)", inputPlaceholder: "e.g., 500", showCancelButton: true, confirmButtonText: "Next", inputValidator: (value) => { if (!value || value <= 0) return "Please enter a valid amount"; } });
     if (amount) {

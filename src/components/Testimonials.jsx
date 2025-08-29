@@ -25,9 +25,7 @@ const useMediaQuery = (query) => {
   return matches;
 };
 
-// =================================================================
-// FIXED: The full data is now included in this array
-// =================================================================
+
 const testimonialsData = [
   {
     name: 'Sudip Karmarkar',
@@ -64,7 +62,7 @@ const TestimonialCard = ({ item }) => (
 );
 
 const Testimonials = () => {
-  // Check if the screen is desktop size (993px or wider)
+  
   const isDesktop = useMediaQuery('(min-width: 993px)');
 
   return (
@@ -74,14 +72,13 @@ const Testimonials = () => {
         <h2 className="section-title">Here’s What People Say About <span className="highlight-word">Give</span></h2>
 
         {isDesktop ? (
-          // --- RENDER THIS ON DESKTOP ---
           <div className="testimonial-cards-desktop">
             {testimonialsData.map((item, index) => (
               <TestimonialCard item={item} key={index} />
             ))}
           </div>
         ) : (
-          // --- RENDER THIS ON MOBILE/TABLET ---
+          
           <Swiper
             className="testimonial-swiper"
             modules={[Autoplay, Navigation]}

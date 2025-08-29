@@ -3,8 +3,7 @@ import './WhatsApp.css';
 
 const WhatsApp = () => {
   const phoneNumber = "919322342225";
-  
-  // The message is rewritten with a regular space before "Thank you"
+ 
   const message = "Hello, could you please send me information on both your volunteer opportunities and how to make a donation? Thank you";
 
   return (

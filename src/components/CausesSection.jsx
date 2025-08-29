@@ -13,7 +13,7 @@ import { Navigation, Pagination } from "swiper/modules";
 
 const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
-// ✅ 1. YEH FUNCTION ADD KAREIN
+// Utility function to create URL-friendly slugs from cause titles
 const slugify = (text) => {
   if (!text) return '';
   return text.toString().toLowerCase().trim()
@@ -61,7 +61,6 @@ const CausesSection = () => {
   }, [fetchCauses]);
 
   const handleShare = async (cause) => {
-    // ✅ 2. BAS YEH LINE BADLI HAI
     const shareData = {
       title: cause.title,
       text: cause.description,
@@ -166,7 +165,7 @@ const CausesSection = () => {
         key: razorpayKey,
         amount: amountFromBackend,
         currency: currencyFromBackend,
-        name: "Alphaseam Foundation",
+        name: "Green Dharti",
         description: "Donation Payment",
         order_id: orderId,
         handler: async (response) => {

@@ -14,7 +14,6 @@ const Blog = () => {
 
   // ✅ Function to handle sharing
   const handleShare = async (e, title, url, summary) => {
-    // This stops the click from navigating to the blog page
     e.stopPropagation();
 
     const shareData = {
@@ -31,8 +30,7 @@ const Blog = () => {
         console.error('Error sharing:', error);
       }
     } else {
-      // Fallback for desktop browsers
-      // In this case, we'll just copy the link to the clipboard
+
       try {
         await navigator.clipboard.writeText(url);
         alert('Link copied to clipboard!');
@@ -47,7 +45,7 @@ const Blog = () => {
     const fetchBlogs = async () => {
       try {
         const res = await PublicApi.getBlogs();
-        // Make sure blogs data is an array before setting state
+     
         if (Array.isArray(res.data)) {
           setBlogs(res.data);
         } else {
@@ -100,10 +98,9 @@ const Blog = () => {
                 </p>
                 <p className="blog-slug">{blog.slug}</p>
 
-                {/* ✅ Add the Share Button JSX here */}
+                
                 <div className="share-container">
                   <button
-                    // ✅ THIS IS THE ONLY LINE THAT CHANGED
                     onClick={(e) => handleShare(e, blog.title, blogUrl, blog.content ? blog.content.slice(0, 150) + '...' : 'Check out this article!')}
                     className="share-button"
                     title="Share this blog"

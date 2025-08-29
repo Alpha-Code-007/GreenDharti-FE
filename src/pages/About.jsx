@@ -4,9 +4,6 @@ import './About.css';
 import clean_beach from "../assets/about/clean_beach.jpg";
 import cleaning_beach from "../assets/about/cleaning-beach.jpg";
 
-// You can find icons from libraries like 'react-icons' (e.g., npm install react-icons)
-// import { FaSeedling, FaUsers, FaHandHoldingHeart, FaSearchDollar } from 'react-icons/fa';
-
 const About = () => {
   return (
     <div className="about-page-v2">
@@ -19,8 +16,6 @@ const About = () => {
           </p>
         </div>
       </section>
-
-      {/* --- ALL OTHER SECTIONS REMAIN UNCHANGED --- */}
 
       {/* OUR STORY SECTION */}
       <section className="content-section">

@@ -198,7 +198,7 @@ const CauseDetails = () => {
                 key: razorpayKey,
                 amount: backendAmount,
                 currency: backendCurrency,
-                name: "Alphaseam Foundation",
+                name: "Green Dharti",
                 description: "Donation Payment",
                 order_id: orderId,
                 handler: async (response) => {

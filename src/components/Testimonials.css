@@ -39,7 +39,6 @@
   font-weight: 700;
   text-align: center;
   width: 100%;
-  /* FIX: Ensures title appears on top of the cards */
   position: relative;
   z-index: 5;
 }
@@ -63,7 +62,6 @@
   max-width: 300px;
 }
 
-/* Staggered effect for desktop */
 .testimonial-cards-desktop .testimonial-card:nth-child(1),
 .testimonial-cards-desktop .testimonial-card:nth-child(3) {
   margin-top: 50px;
@@ -75,17 +73,15 @@
 
 /* === MOBILE/TABLET LAYOUT (Swiper Slider) === */
 .testimonial-swiper {
-  width: 90vw; /* Takes full viewport width */
+  width: 90vw; 
   max-width: 1200px;
 }
 
 .swiper-slide {
-  height: auto; /* Important for content of different heights */
+  height: auto; 
   padding: 10px 0 20px 0;
 }
 
-
-/* === CARD STYLING (Applies to both views) === */
 .testimonial-card {
   background: #ffffff;
   padding: 30px;
@@ -153,7 +149,6 @@
 
 /* === GENERAL RESPONSIVE STYLES === */
 @media (max-width: 992px) {
-  /* On tablet, the desktop view (if shown) would stack */
   .testimonial-cards-desktop {
     flex-direction: column;
     align-items: center;
@@ -200,7 +195,7 @@
   .testimonial-card {
     padding: 20px;
   }
-  /* Swiper Navigation Arrows */
+  
 .swiper-button-prev,
 .swiper-button-next {
   color: #4dc2c2;

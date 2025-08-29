@@ -43,8 +43,8 @@
   max-width: 450px;
   min-width: 280px;
   margin-bottom: 30px;
-  display: flex; /* Added for better layout */
-  flex-direction: column; /* Added for better layout */
+  display: flex; 
+  flex-direction: column; 
 }
 
 
@@ -62,9 +62,9 @@
 
 .blog-content {
   padding: 1.5rem;
-  display: flex; /* Added for better layout */
-  flex-direction: column; /* Added for better layout */
-  flex-grow: 1; /* Allows footer elements to stick to the bottom */
+  display: flex; 
+  flex-direction: column; 
+  flex-grow: 1; 
 }
 
 .blog-content h3 {
@@ -82,10 +82,9 @@
 .blog-slug {
   color: #777;
   font-size: 0.85rem;
-  flex-grow: 1; /* Pushes the share button down */
+  flex-grow: 1; 
 }
 
-/* --- ✅ NEW STYLES FOR SHARE BUTTON --- */
 .share-container {
   margin-top: 15px;
   padding-top: 15px;
@@ -114,7 +113,7 @@
   background-color: #e0f2f1;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
-/* --- END OF NEW STYLES --- */
+
 
 
 @media (max-width: 1024px) {
@@ -147,7 +146,7 @@
 
 @media (max-width: 600px) {
   .blog-box {
-    width: 100%;             /* 1 per row */
+    width: 100%;             
   }
 }
 

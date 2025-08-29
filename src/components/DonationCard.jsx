@@ -206,7 +206,7 @@ const DonationCard = () => {
         key: razorpayKey,
         amount: amountFromBackend,
         currency: currencyFromBackend,
-        name: "Alphaseam Foundation",
+        name: "Green Dharti",
         description: `Donation for ${selectedCause.title}`,
         order_id: orderId,
         handler: async (response) => {

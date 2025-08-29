@@ -56,16 +56,6 @@ const EventDetailPage = () => {
     }
   }, [eventSlug]);
 
-  // const handleShare = async () => {
-  //   if (!event) return;
-  //   const shareData = { title: event.title, text: event.description, url: window.location.href };
-  //   if (navigator.share) {
-  //     await navigator.share(shareData).catch(err => console.log("Share error:", err));
-  //   } else {
-  //     await navigator.clipboard.writeText(shareData.url);
-  //     Swal.fire({ toast: true, position: 'top-end', icon: 'success', title: 'Link copied!', showConfirmButton: false, timer: 2000 });
-  //   }
-  // };
 
   if (loading) return <p className="loading-text">Loading event...</p>;
   if (error) return <p className="error-text">{error}</p>;
@@ -125,9 +115,7 @@ const EventDetailPage = () => {
           <p className="event-description-details">{event.description}</p>
           <p><strong>Location : </strong>{event.location}</p>
           <p><strong>Max Participant : </strong>{event.maxParticipants}</p>
-          {/* <button onClick={handleShare} className="share-button" title="Share this event" style={{ marginTop: '20px' }}>
-            Share Event <FaShareAlt />
-          </button> */}
+          
         </div>
       </div>
     </div>

@@ -1,10 +1,6 @@
-/* src/pages/About.css - UPDATED & ISOLATED STYLES */
 
-/* --- FONT IMPORT --- */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:ital,wght@0,400;1,500&display=swap');
 
-/* --- CSS VARIABLES FOR EASY THEMEING --- */
-/* We are keeping this block but will override the primary color directly in the styles below */
 :root {
   --primary-color: #f45612; 
   --secondary-color: #ffc107;
@@ -21,15 +17,14 @@
   background-color: var(--light-bg);
 }
 
-/* --- HERO SECTION - UPDATED STYLES --- */
 .about-hero-v2 {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: var(--light-text);
-  /* background-color: #ec6906; */
-background-color:  #004d40; /* <-- CHANGED to direct green color */
+
+background-color:  #004d40;
   padding: 60px 20px;
 }
 
@@ -53,7 +48,6 @@ background-color:  #004d40; /* <-- CHANGED to direct green color */
   color: white;
 }
 
-/* --- GENERAL CONTENT & TWO-COLUMN LAYOUT --- */
 .content-section {
   padding: 20px 20px;
 }
@@ -84,7 +78,7 @@ background-color:  #004d40; /* <-- CHANGED to direct green color */
 .column-text h2 {
   font-family: var(--font-heading);
   font-size: 2.5rem;
-  color: #004d40; /* <-- CHANGED to direct green color */
+  color: #004d40; 
   margin-bottom: 20px;
 }
 
@@ -105,7 +99,6 @@ background-color:  #004d40; /* <-- CHANGED to direct green color */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* --- APPROACH CARDS SECTION --- */
 .approach-section {
   padding: 40px 20px;
   background-color: var(--light-bg);
@@ -115,7 +108,7 @@ background-color:  #004d40; /* <-- CHANGED to direct green color */
 .approach-section h2 {
   font-family: var(--font-heading);
   font-size: 2.5rem;
-  color: #004d40; /* <-- CHANGED to direct green color */
+  color: #004d40;
   margin-bottom: 50px;
 }
 
@@ -141,7 +134,7 @@ background-color:  #004d40; /* <-- CHANGED to direct green color */
 }
 
 .card-icon {
-  color: #2E8B57; /* <-- CHANGED to direct green color */
+  color: #2E8B57; 
   margin-bottom: 15px;
 }
 
@@ -158,7 +151,7 @@ background-color:  #004d40; /* <-- CHANGED to direct green color */
 /* --- QUOTE SECTION --- */
 .quote-section {
   padding: 80px 20px;
-  background-color: #004d40; /* <-- CHANGED to direct green color */
+  background-color: #004d40; 
   color: var(--light-text);
   text-align: center;
 }

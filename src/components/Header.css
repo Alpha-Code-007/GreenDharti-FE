@@ -140,21 +140,9 @@
   }
 }
 
-/* 📱 Tablet Portrait + Small Laptops (768px - 991px) */
-@media (max-width: 991px) {
-  .nav-links {
-    gap: 15px;
-  }
-  .phone-number {
-    font-size: 0.95rem;
-  }
-  .logo-text {
-    font-size: 1.5rem;
-  }
-}
 
 /* 📲 Mobile & Tablet (<=768px) */
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .main-header {
     padding: 15px 0;
   }

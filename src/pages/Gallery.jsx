@@ -3,6 +3,7 @@ import React from 'react';
 import './Gallery.css';
 
 const images = [
+  'Gallary/Lisbon.jpg',
   'Gallary/img_2.jpg',
   'Gallary/img_3.jpg',
   'Gallary/img_4.jpg',

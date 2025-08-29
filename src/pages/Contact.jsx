@@ -1,14 +1,12 @@
 // src/pages/Contact.jsx
 import React, { useState } from 'react';
-import axios from 'axios'; // Already imported
+import axios from 'axios'; 
 import './Contact.css';
-import { PublicApi } from '../services/api'; // Already imported
-import Swal from 'sweetalert2'; // Already imported
+import { PublicApi } from '../services/api'; 
+import Swal from 'sweetalert2'; 
 
-// ⭐ Import images for the layout ⭐
 import contactHeroBg from "../assets/contact/contact_form-hero.webp";
-// Path to your hero background image
-import contactIllustration from '../assets/contact/contact_form_second.png'; // Path to your contact illustration image
+import contactIllustration from '../assets/contact/contact_form_second.png'; 
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -21,7 +19,6 @@ const Contact = () => {
 
   const [errors, setErrors] = useState({});
 
-  // Function to validate a single field
   const validateField = (name, value) => {
     const isTextOnly = (str) => /^[A-Za-z\s]*$/.test(str);
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -73,17 +70,14 @@ const Contact = () => {
     }
     else {
         setFormData({ ...formData, [name]: value });
-        // Validate the field on change and update errors state
         const error = validateField(name, value);
         setErrors({ ...errors, [name]: error });
     }
   };
 
-  // This function validates the entire form on submission
   const validateForm = () => {
     const newErrors = {};
     Object.keys(formData).forEach(key => {
-        // Use the blur-style validation logic for submit
         const value = formData[key];
         let error = '';
         switch (key) {
@@ -159,16 +153,14 @@ const Contact = () => {
 
   return (
     <div className="contact-page">
-      {/* ⭐ Hero Section - Top Image with Text Overlay ⭐ */}
       <section className="contact-hero-section" style={{ backgroundImage: `url(${contactHeroBg})` }}>
-        <div className="hero-overlay"></div> {/* For dark overlay on image */}
+        <div className="hero-overlay"></div>
         <div className="hero-content-text">
           <h1>Contact <span className="highlight-word">Us</span></h1>
           <p>By working together and supporting each other, we can create a more caring compassionate and equitable society.</p>
         </div>
       </section>
 
-      {/* ⭐ Contact Info Cards Section - Overlapping Hero ⭐ */}
       <section className="contact-info-cards-section">
         <div className="contact-info-card">
           <i className="fas fa-envelope contact-icon"></i> {/* Email icon */}

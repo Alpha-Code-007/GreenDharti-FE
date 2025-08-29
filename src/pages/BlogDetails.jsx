@@ -16,7 +16,6 @@ const BlogDetails = () => {
     const [error, setError] = useState("");
     const navigate = useNavigate();
 
-    // This function is no longer used for the share image, but can stay for the <img> tag
     const getImageUrl = (relativePath) => `${API_BASE}/api/images/${relativePath}`;
 
     useEffect(() => {
@@ -40,8 +39,6 @@ const BlogDetails = () => {
 
     const blogDescription = blog.subtitle || blog.title;
 
-    // ❌ Old dynamic image line is removed.
-    // ✅ New static image line added below.
     const blogImage = `${SITE_URL}/crowdfund_logo.png`;
 
     const blogUrl = `${SITE_URL}/blog/${slug}`;

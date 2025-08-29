@@ -1,6 +1,3 @@
-/* =================================== */
-/* Main Page Container & Back Button */
-/* =================================== */
 .event-details-page {
   max-width: 900px; /* Increased width for a better two-column look */
   margin: 2rem auto;
@@ -25,11 +22,6 @@
   background-color: #e2e8f0;
 }
 
-
-/* =================================== */
-/* NEW: Flexbox Layout Container  */
-/* This is the key for the new layout */
-/* =================================== */
 .event-card-details {
   /* display: flex; Activates Flexbox */
   flex-direction: row; /* Arranges items side-by-side */
@@ -40,10 +32,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-
-/* =================================== */
-/* NEW: Image Column Styling      */
-/* =================================== */
 .event-details-image {
   flex: 1 1 40%; /* Column will take up 40% of the space */
   width: 100%; /* Ensures image is contained */
@@ -53,18 +41,10 @@
   align-self: flex-start; /* Aligns image to the top of the container */
 }
 
-
-/* =================================== */
-/* NEW: Content Column Styling    */
-/* =================================== */
 .event-details-content {
   flex: 1 1 60%; /* Column will take up 60% of the space */
 }
 
-
-/* =================================== */
-/* Typography (Date, Title, etc.) */
-/* =================================== */
 .event-datetime-details {
   font-size: 0.9rem;
   font-weight: 600;
@@ -92,10 +72,7 @@
   /* Add styling for your share button here */
 }
 
-
-/* =================================== */
 /* Responsive Design for Mobile   */
-/* =================================== */
 @media (max-width: 768px) {
   /* Make the layout stack vertically on mobile */
   .event-card-details {
